@@ -12,7 +12,7 @@
         header { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
         .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
         .logo-container { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: bold; }
-.logo-box { display: none !important; }        nav { display: flex; gap: 30px; }
+        nav { display: flex; gap: 30px; }
         nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
         nav a:hover { opacity: 0.8; }
         .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; padding: 100px 20px; text-align: center; }
@@ -28,77 +28,101 @@
         .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
         .service-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s; border-top: 4px solid var(--primary); }
         .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
-        .service-icon { font-size: 48px; margin-bottom: 15px; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        .contact-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; }
-        .contact-card a { color: var(--accent); text-decoration: none; font-weight: bold; }
-        .location { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); margin-top: 40px; }
-        .location-info { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; }
-        .map { width: 100%; height: 300px; background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; }
-        .social-links { display: flex; gap: 20px; justify-content: center; margin-top: 40px; }
-        .social-link { width: 50px; height: 50px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; transition: all 0.3s; }
+        .service-icon { font-size: 48px; margin-bottom: 20px; }
+        .service-card h3 { font-size: 22px; color: var(--primary); margin-bottom: 15px; }
+        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .benefit-item { background: var(--light); padding: 30px; border-radius: 10px; border-left: 4px solid var(--accent); }
+        .benefit-item h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
+        .contact-item { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: center; }
+        .contact-icon { font-size: 36px; margin-bottom: 15px; color: var(--primary); }
+        .location-info { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .map-container { background: #e9ecef; padding: 20px; border-radius: 10px; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center; }
+        .address-details { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
+        .address-details h3 { color: var(--primary); margin-bottom: 20px; }
+        .address-details p { margin-bottom: 10px; line-height: 1.8; }
+        .social-section { background: var(--light); padding: 60px 20px; margin: 0 -20px; }
+        .social-links { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
+        .social-link { width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; transition: all 0.3s; }
         .social-link:hover { background: var(--accent); transform: scale(1.1); }
         footer { background: #1a1a1a; color: white; padding: 40px 20px; text-align: center; margin-top: 80px; }
-        @media (max-width: 768px) { .header-content { flex-direction: column; } nav { flex-wrap: wrap; gap: 15px; justify-content: center; } .hero h1 { font-size: 32px; } .location-info { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { 
+            .header-content { flex-direction: column; }
+            nav { flex-wrap: wrap; gap: 15px; justify-content: center; }
+            .hero h1 { font-size: 32px; }
+            .location-info { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <div class="logo-box">ND</div>
                 <span>ND RIMAD</span>
             </div>
             <nav>
                 <a href="#servizi">Servizi</a>
-                <a href="#vantaggi">Vantaggi</a>
+                <a href="#perche-noi">Perché noi</a>
                 <a href="#contatti">Contatti</a>
-                <a href="#ubicazione">Ubicazione</a>
+                <a href="#dove-siamo">Dove siamo</a>
             </nav>
         </div>
     </header>
-    
+
     <section class="hero">
         <div class="hero-content">
-            <h1>🔧 Riparazione Manipoli Dentali </h1>
-<p style="text-align: center; white-space: nowrap; font-size: 18px;">Ritiro gratuito, preventivi in 48h, garanzia 6 mesi</p>            <a href="https://wa.me/393249943466" class="cta-button">💬 Richiedi Preventivo WhatsApp</a>
-            <a href="tel:+393249943466" class="cta-button" style="background: transparent; border: 2px solid white;">📞 Chiama</a>
+            <h1>Riparazione Professionale Manipoli Dentali</h1>
+            <p>Servizio completo di riparazione per i tuoi strumenti odontoiatrici. Ritiro gratuito, preventivo in 48h e garanzia 6 mesi.</p>
+            <a href="#contatti" class="cta-button">Richiedi Preventivo</a>
+            <a href="#servizi" class="cta-button">Scopri i Servizi</a>
         </div>
     </section>
-    
+
     <main>
         <section id="servizi">
             <h2>I Nostri Servizi</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <div class="service-icon">🔨</div>
-                    <h3>Riparazioni </h3>
-                    <p>Riparazione rapida e professionale di manipoli dentali con garanzia 6 mesi</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🚚</div>
-                    <h3>Ritiro Gratuito</h3>
-                    <p>Ritiro gratuito presso il vostro studio in Veneto</p>
+                    <div class="service-icon">🔧</div>
+                    <h3>Riparazione Turbine</h3>
+                    <p>Riparazione completa di turbine dentali con ricambi originali e certificati.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
-                    <h3>Assistenza Tecnica</h3>
-                    <p>Assistenza tecnica specializzata per strumenti dentali</p>
+                    <h3>Manutenzione Contrangle</h3>
+                    <p>Servizio di manutenzione e riparazione per contrangle e manipoli a bassa velocità.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">📦</div>
-                    <h3>Ricambi di Qualità</h3>
-                    <p>Vendita ricambi originali e materiali </p>
+                    <div class="service-icon">💨</div>
+                    <h3>Revisione Micromotori</h3>
+                    <p>Controllo e riparazione di micromotori elettrici e ad aria.</p>
                 </div>
                 <div class="service-card">
-                    <div class="service-icon">⏱️</div>
-                    <h3>Preventivi Rapidi</h3>
-                    <p>Preventivi dettagliati entro 48 ore</p>
+                    <div class="service-icon">✨</div>
+                    <h3>Pulizia e Lubrificazione</h3>
+                    <p>Servizio di pulizia approfondita e lubrificazione professionale.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">✅</div>
-                    <h3>Garanzia 6 Mesi</h3>
-                    <p>Garanzia completa su tutti i lavori</p>
+            </div>
+        </section>
+
+        <section id="perche-noi">
+            <h2>Perché Scegliere ND RIMAD</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>🚚 Ritiro Gratuito</h3>
+                    <p>Servizio di ritiro e consegna gratuito in Veneto</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>⚡ Preventivo Rapido</h3>
+                    <p>Ricevi il preventivo dettagliato entro 48 ore</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>✅ Garanzia 6 Mesi</h3>
+                    <p>Tutti i nostri interventi sono garantiti 6 mesi</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>🔍 Ricambi Originali</h3>
+                    <p>Utilizziamo solo ricambi originali certificati</p>
                 </div>
             </div>
         </section>
@@ -106,56 +130,56 @@
         <section id="contatti">
             <h2>Contattaci</h2>
             <div class="contact-grid">
-                <div class="contact-card">
-                    <div style="font-size: 40px; margin-bottom: 15px; color: var(--primary);">📞</div>
-                    <h3>Telefono</h3>
-                    <a href="tel:+393249943466">+39 3249943466</a>
-                </div>
-                <div class="contact-card">
-                    <div style="font-size: 40px; margin-bottom: 15px; color: var(--primary);">📧</div>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
                     <h3>Email</h3>
-                    <a href="mailto:info@ndrimad.com">info@ndrimad.com</a>
+                    <p>info@ndrimad.com</p>
                 </div>
-                <div class="contact-card">
-                    <div style="font-size: 40px; margin-bottom: 15px; color: var(--primary);">💬</div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <h3>Telefono</h3>
+                    <p>+39 XXX XXX XXXX</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💬</div>
                     <h3>WhatsApp</h3>
-                    <a href="https://wa.me/393249943466">Invia messaggio</a>
+                    <p>Scrivici su WhatsApp</p>
                 </div>
             </div>
         </section>
 
-        <section id="ubicazione">
-            <h2>Ubicazione</h2>
-            <div class="location">
-                <div class="location-info">
-                    <div class="location-details">
-                        <h3>ND RIMAD</h3>
-                        <p><strong>Indirizzo:</strong> Via Cavarne 14, 31040 Segusino (TV)</p>
-                        <p><strong>Telefono:</strong> +39 3249943466</p>
-                        <p><strong>Email:</strong> info@ndrimad.com</p>
-                        <p><strong>Orari:</strong> Lunedì - Venerdì 9:00 - 19:00</p>
-                        <p style="margin-top: 20px; color: #666; font-size: 14px;"></p>
-                    </div>
-                    <div class="map">
-                        📍 Segusino, Veneto<br/>Italia
-                    </div>
+        <section id="dove-siamo">
+            <h2>Dove Siamo</h2>
+            <div class="location-info">
+                <div class="map-container">
+                    <p>📍 Mappa (Google Maps da integrare)</p>
+                </div>
+                <div class="address-details">
+                    <h3>ND RIMAD</h3>
+                    <p><strong>Indirizzo:</strong> Via Esempio, 123</p>
+                    <p><strong>Città:</strong> Padova (PD)</p>
+                    <p><strong>CAP:</strong> 35100</p>
+                    <p><strong>Regione:</strong> Veneto</p>
+                    <p><strong>Orari:</strong> Lun-Ven 9:00-18:00</p>
                 </div>
             </div>
         </section>
+    </main>
 
-        <div style="text-align: center; margin-top: 60px;">
+    <div class="social-section">
+        <div style="max-width: 1200px; margin: 0 auto;">
             <h2>Seguici sui Social</h2>
             <div class="social-links">
-                <a href="https://www.facebook.com/ndrimadcd" class="social-link" title="Facebook">f</a>
-                <a href="https://www.instagram.com/ndrimadcd" class="social-link" title="Instagram">📷</a>
+                <a href="#" class="social-link" title="Facebook">f</a>
+                <a href="#" class="social-link" title="Instagram">📷</a>
+                <a href="#" class="social-link" title="LinkedIn">in</a>
             </div>
         </div>
-    </main>
-    
+    </div>
+
     <footer>
-        <p>&copy; 2026 ND RIMAD - Riparazione Manipoli Dentali. Tutti i diritti riservati.</p>
-        <p>Via Cavarne 14, 31040 Segusino (TV) | Tel. +39 3249943466 | Email: info@ndrimad.com</p>
-        <p style="margin-top: 20px; font-size: 12px; opacity: 0.6;">Sito realizzato con GitHub Pages</p>
+        <p>&copy; 2026 ND RIMAD - Riparazione Manipoli Dentali | P.IVA: XXXXXXXXXXX</p>
+        <p>Tutti i diritti riservati</p>
     </footer>
 </body>
 </html>
