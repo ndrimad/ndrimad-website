@@ -1,190 +1,386 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-     <meta name="referrer" content="strict-origin-when-cross-origin">
-     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'; img-src 'self' https:; font-src 'self'; connect-src 'self'; frame-ancestors 'none';">
-     <meta http-equiv="X-Content-Type-Options" content="nosniff">
-     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="ND RIMAD - Specialisti nella riparazione di manipoli dentali. Ritiro gratuito, preventivi in 48h, garanzia 6 mesi.">
-    <title>ND RIMAD - Riparazione Manipoli Dentali</title>
+    <title>ND RiMaD | Riparazione e Assistenza Manipoli Dentali</title>
+    <!-- Script di reindirizzamento automatico per dispositivi mobili -->
+    <script>
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            window.location.href = "mobile.html";
+        }
+    </script>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        rimad: {
+                            50: '#f0f5fc',
+                            100: '#d9e7f8',
+                            500: '#4675b4',
+                            600: '#345c94',
+                            700: '#274776',
+                            800: '#1b3356',
+                            900: '#112138',
+                        },
+                        steel: {
+                            100: '#f1f3f5',
+                            200: '#e5e8ec',
+                            500: '#adb5bd',
+                            700: '#495057',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root { --primary: #0066cc; --dark: #0052a3; --accent: #ff6b35; --light: #f8f9fa; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, sans-serif; line-height: 1.6; color: #333; }
-        header { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; padding: 20px 0; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .header-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .logo-container { display: flex; align-items: center; gap: 15px; font-size: 24px; font-weight: bold; }
-        nav { display: flex; gap: 30px; }
-        nav a { color: white; text-decoration: none; font-weight: 500; transition: opacity 0.3s; }
-        nav a:hover { opacity: 0.8; }
-        .hero { background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%); color: white; padding: 100px 20px; text-align: center; }
-        .hero-content { max-width: 800px; margin: 0 auto; }
-        .hero h1 { font-size: 48px; margin-bottom: 20px; }
-        .hero p { font-size: 20px; margin-bottom: 30px; opacity: 0.95; }
-        .cta-button { display: inline-block; background: var(--accent); color: white; padding: 15px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; transition: all 0.3s; margin: 10px; border: none; cursor: pointer; }
-        .cta-button:hover { background: #ff5722; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
-        main { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
-        section { margin-bottom: 80px; }
-        h2 { font-size: 36px; margin-bottom: 40px; color: var(--primary); text-align: center; position: relative; padding-bottom: 15px; }
-        h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: var(--accent); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
-        .service-card { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-align: center; transition: all 0.3s; border-top: 4px solid var(--primary); }
-        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
-        .service-icon { font-size: 48px; margin-bottom: 20px; }
-        .service-card h3 { font-size: 22px; color: var(--primary); margin-bottom: 15px; }
-        .benefits-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .benefit-item { background: var(--light); padding: 30px; border-radius: 10px; border-left: 4px solid var(--accent); }
-        .benefit-item h3 { color: var(--primary); margin-bottom: 10px; font-size: 20px; }
-        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 40px; }
-        .contact-item { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); text-align: center; }
-        .contact-icon { font-size: 36px; margin-bottom: 15px; color: var(--primary); }
-        .location-info { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
-        .map-container { background: #e9ecef; padding: 20px; border-radius: 10px; text-align: center; min-height: 300px; display: flex; align-items: center; justify-content: center; }
-        .address-details { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); }
-        .address-details h3 { color: var(--primary); margin-bottom: 20px; }
-        .address-details p { margin-bottom: 10px; line-height: 1.8; }
-        .social-section { background: var(--light); padding: 60px 20px; margin: 0 -20px; }
-        .social-links { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
-        .social-link { width: 60px; height: 60px; background: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 24px; transition: all 0.3s; }
-        .social-link:hover { background: var(--accent); transform: scale(1.1); }
-        footer { background: #1a1a1a; color: white; padding: 40px 20px; text-align: center; margin-top: 80px; }
-        @media (max-width: 768px) { 
-            .header-content { flex-direction: column; }
-            nav { flex-wrap: wrap; gap: 15px; justify-content: center; }
-            .hero h1 { font-size: 32px; }
-            .location-info { grid-template-columns: 1fr; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-pattern {
+            background-color: #112138;
+            background-image: radial-gradient(rgba(70, 117, 180, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <span>ND RIMAD</span>
-            </div>
-            <nav>
-                <a href="#servizi">Servizi</a>
-                <a href="#perche-noi">Perché noi</a>
-                <a href="#contatti">Contatti</a>
-                <a href="#dove-siamo">Dove siamo</a>
+<body class="bg-slate-50 text-slate-800 antialiased selection:bg-rimad-500 selection:text-white">
+    <!-- HEADER FISSO -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logo Aziendale -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="Rimad Logo.PNG" alt="ND RiMaD Logo" class="h-10 sm:h-12 w-auto object-contain rounded-lg shadow-sm group-hover:scale-105 transition-transform">
+            </a>
+            <!-- Navigazione Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600">
+                <a href="#vantaggi" class="hover:text-rimad-500 transition-colors">Vantaggi</a>
+                <a href="#chi-siamo" class="hover:text-rimad-500 transition-colors">Chi Siamo</a>
+                <a href="#contatti" class="hover:text-rimad-500 transition-colors">Contatti</a>
             </nav>
+            <!-- Azione Rapida Header -->
+            <div class="flex items-center gap-4">
+                <a href="tel:3249943466" class="hidden sm:flex items-center gap-2 text-rimad-700 font-semibold text-sm bg-rimad-50 px-4 py-2.5 rounded-xl hover:bg-rimad-100 transition-all border border-rimad-100">
+                    <i class="fa-solid fa-phone-volume text-rimad-500"></i>
+                    <span>+39 324 9943466</span>
+                </a>
+                <a href="#contatti" class="bg-rimad-500 hover:bg-rimad-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-md shadow-rimad-500/20 hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+                    Richiedi Preventivo
+                </a>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Riparazione Manipoli Dentali</h1>
-            <p>Ritiro gratuito, preventivo in 48h e garanzia 6 mesi.</p>
-            <a href="mailto:info@ndrimad.com" class="cta-button">Richiedi Preventivo</a>
-            <a href="#servizi" class="cta-button">Scopri i Servizi</a>
+    <!-- SEZIONE HERO -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 hero-pattern text-white overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-rimad-900/80 via-rimad-900/90 to-rimad-900 pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-rimad-500/20 border border-rimad-400/30 text-rimad-200 text-xs sm:text-sm font-medium tracking-wide">
+                        <i class="fa-solid fa-wrench text-rimad-400"></i> Specializzati in Turbine, Contrangoli e Manipoli Odontoiatrici
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Riparazione Professionale <span class="text-rimad-400">Manipoli Dentali</span>
+                    </h1>
+                    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        Garantiamo massima precisione, rapidità d'intervento e ricambi di altissima qualità per dentisti e odontotecnici. Allunga la vita delle tue apparecchiature con <strong>ND RiMaD</strong>.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                        <a href="#contatti" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-rimad-500 hover:bg-rimad-600 text-white font-semibold px-8 py-4 rounded-xl shadow-lg shadow-rimad-500/30 transition-all text-base transform hover:-translate-y-0.5">
+                            <span>Richiedi Assistenza Ora</span>
+                            <i class="fa-solid fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="tel:3249943466" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/15 text-white border border-white/20 font-semibold px-6 py-4 rounded-xl transition-all text-base backdrop-blur-sm">
+                            <i class="fa-solid fa-phone text-rimad-400"></i>
+                            <span>Chiama Subito</span>
+                        </a>
+                    </div>
+                    <div class="pt-6 grid grid-cols-3 gap-4 border-t border-white/10 text-left">
+                        <div>
+                            <div class="text-2xl font-bold text-white">Gratuito</div>
+                            <div class="text-xs text-slate-400">Ritiro Corriere</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">48 Ore</div>
+                            <div class="text-xs text-slate-400">Preventivo Dettagliato</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-white">6 Mesi</div>
+                            <div class="text-xs text-slate-400">Garanzia sui Ricambi</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="relative w-full max-w-md bg-gradient-to-br from-rimad-800 to-rimad-900 border border-rimad-600/40 p-8 rounded-3xl shadow-2xl backdrop-blur-xl">
+                        <div class="absolute -top-4 -right-4 bg-rimad-500 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-full shadow-md">
+                            Oltre 10 Anni di Esperienza
+                        </div>
+                        <div class="text-center space-y-6">
+                            <div class="w-20 h-20 mx-auto bg-rimad-500/20 rounded-2xl flex items-center justify-center border border-rimad-400/30 text-rimad-400 text-3xl shadow-inner">
+                                <i class="fa-solid fa-hand-holding-medical"></i>
+                            </div>
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold text-white">Servizio Certificato ND RiMaD</h3>
+                                <p class="text-sm text-slate-300">
+                                    Interventi mirati su manipoli ad alta e bassa velocità, turbine, contrangoli, micromotori e ablatori di tutte le marche del settore dentale.
+                                </p>
+                            </div>
+                            <div class="bg-rimad-950/60 p-4 rounded-xl border border-rimad-800 text-left space-y-2">
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-green-400"></i> Ritiro e riconsegna rapidi
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-green-400"></i> Ricambi originali o Myonic
+                                </div>
+                                <div class="flex items-center gap-2 text-xs text-slate-300">
+                                    <i class="fa-solid fa-circle-check text-green-400"></i> Assistenza dedicata per studi e laboratori
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <main>
-        <section id="servizi">
-            <h2>I Nostri Servizi</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🔧</div>
-                    <h3>Riparazione Turbine</h3>
-                    <p>Riparazione completa di turbine dentali con ricambi originali e certificati.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">⚙️</div>
-                    <h3>Manutenzione Contrangle</h3>
-                    <p>Servizio di manutenzione e riparazione per contrangle e manipoli a bassa velocità.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💨</div>
-                    <h3>Revisione Micromotori</h3>
-                    <p>Controllo e riparazione di micromotori elettrici e ad aria.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3>Pulizia e Lubrificazione</h3>
-                    <p>Servizio di pulizia approfondita e lubrificazione professionale.</p>
-                </div>
+    <!-- SEZIONE VANTAGGI -->
+    <section id="vantaggi" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-rimad-50 px-3 py-1 rounded-full border border-rimad-100">I Nostri Punti di Forza</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Eccellenza, Velocità e Trasparenza a Servizio del Professionista
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Comprendiamo l'importanza di avere attrezzature perfettamente efficienti nel tuo studio dentistico o laboratorio odontotecnico.
+                </p>
             </div>
-        </section>
-
-        <section id="perche-noi">
-            <h2>Perché Scegliere ND RIMAD</h2>
-            <div class="benefits-grid">
-                <div class="benefit-item">
-                    <h3>🚚 Ritiro Gratuito</h3>
-                    <p>Servizio di ritiro e consegna gratuito in Veneto</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ritiro Gratuito</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Ritiro gratuito del materiale tramite corriere a nostro carico direttamente presso la tua sede.
+                    </p>
                 </div>
-                <div class="benefit-item">
-                    <h3>⚡ Preventivo Rapido</h3>
-                    <p>Ricevi il preventivo dettagliato entro 48 ore</p>
+                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Preventivo in 48 Ore</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Entro 48 ore dal ricevimento comunichiamo dettagliato preventivo (ed eventuali cause mancata riparazione).
+                    </p>
                 </div>
-                <div class="benefit-item">
-                    <h3>✅ Garanzia 6 Mesi</h3>
-                    <p>Tutti i nostri interventi sono garantiti 6 mesi</p>
+                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-clock-rotate-left"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Riconsegna Rapida</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Riconsegna del materiale entro 3 giorni dall'accettazione del preventivo.
+                    </p>
                 </div>
-                <div class="benefit-item">
-                    <h3>🔍 Ricambi Originali</h3>
-                    <p>Utilizziamo solo ricambi originali certificati</p>
+                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-3">Garanzia 6 Mesi</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Forniamo ricambi originali o Myonic di alta qualità con 6 mesi di garanzia su tutto il materiale sostituito.
+                    </p>
                 </div>
-            </div>
-        </section>
-
-        <section id="contatti">
-            <h2>Contattaci</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <h3>Email</h3>
-                    <p><a href="mailto:info@ndrimad.com">info@ndrimad.com</a></p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <h3>Telefono</h3>
-                    <p>Telefono: <a href="tel:+390423378836">+39 0423378836</a><br>Cellulare: <a href="tel:+393249943466">+39 3249943466</a></p>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon">💬</div>
-                    <h3>WhatsApp</h3>
-                    <p><a href="https://wa.me/393249943466">+39 3249943466</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="dove-siamo">
-            <h2>Dove Siamo</h2>
-            <div class="location-info">
-                <div class="map-container">
-                    <p></p>
-                </div>
-                <div class="address-details">
-                    <h3>ND RIMAD</h3>
-                    <p><strong>Indirizzo:</strong> Via Cavarne, 14</p>
-                    <p><strong>Città:</strong> Segusino (TV)</p>
-                    <p><strong>CAP:</strong> 31040</p>
-                    <p><strong>Regione:</strong> Veneto</p>
-                    <p><strong>Orari:</strong> Lunedì - Venerdì 9:00 - 19:00</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="social-section">
-        <div style="max-width: 1200px; margin: 0 auto;">
-            <h2>Seguici sui Social</h2>
-            <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=61585010426865" class="social-link" title="Facebook" rel="noopener noreferrer">f</a>
-                <a href="https://www.instagram.com/ndrimadcd" class="social-link" title="Instagram" rel="noopener noreferrer">📷</a>
-    
             </div>
         </div>
-    </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 ND RIMAD - Riparazione Manipoli Dentali | <p>P.IVA: 05558470265     Telefono:  +390423378836<br>Cellulare: +39 3249943466</p></p>
-        <p>Tutti i diritti riservati</p>
+    <!-- SEZIONE CHI SIAMO -->
+    <section id="chi-siamo" class="py-20 bg-slate-100/70 border-y border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6">
+                    <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-white px-3 py-1 rounded-full border border-slate-200 shadow-xs">Chi Siamo</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        ND RiMaD: Oltre 10 Anni di Esperienza al Vostro Fianco
+                    </h2>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        <strong>ND RiMaD</strong> opera da più di 10 anni nella riparazione di tutto il materiale rotante sia da studio che da laboratorio, offrendo un punto di riferimento d'eccellenza per dentisti e odontotecnici.
+                    </p>
+                    <p class="text-slate-600 text-base leading-relaxed">
+                        Sapendo quanto sia critico ogni singolo strumento durante l'attività clinica e di laboratorio, eseguiamo diagnosi accurate, pulizie ultrasoniche approfondite e interventi mirati con la massima cura artigianale e tecnologica.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
+                            <div class="text-rimad-500 text-xl mt-0.5"><i class="fa-solid fa-award"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Oltre 10 Anni di Storia</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Competenza consolidata nel settore.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
+                            <div class="text-rimad-500 text-xl mt-0.5"><i class="fa-solid fa-gear"></i></div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Studio e Laboratorio</h4>
+                                <p class="text-xs text-slate-500 mt-0.5">Riparazione di tutto il materiale rotante.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200 w-full max-w-md text-center space-y-6">
+                        <div class="p-6 bg-rimad-900 rounded-2xl shadow-inner flex items-center justify-center">
+                            <img src="Rimad Logo.PNG" alt="ND RiMaD" class="h-16 w-auto object-contain">
+                        </div>
+                        <div class="space-y-3">
+                            <h3 class="text-xl font-bold text-slate-900">Il Tuo Partner di Fiducia</h3>
+                            <p class="text-sm text-slate-500">
+                                Affida i tuoi manipoli a mani esperte nella manutenzione. Restituiamo massima efficienza alle tue apparecchiature.
+                            </p>
+                        </div>
+                        <a href="#contatti" class="block w-full bg-rimad-500 hover:bg-rimad-600 text-white font-semibold py-3.5 rounded-xl shadow-md transition-all text-center text-sm">
+                            Contattaci per una Valutazione
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEZIONE CONTATTI E FORM -->
+    <section id="contatti" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-rimad-50 px-3 py-1 rounded-full border border-rimad-100">Contattaci Subito</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                    Richiedi il Ritiro e il Preventivo Gratuiti
+                </h2>
+                <p class="text-slate-600 text-base sm:text-lg">
+                    Compila il form sottostante per richiedere assistenza, oppure utilizza i nostri recapiti diretti.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-8 relative overflow-hidden">
+                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-rimad-500/10 rounded-full blur-2xl pointer-events-none"></div>
+                        <div class="space-y-2">
+                            <h3 class="text-2xl font-bold">Informazioni Dirette</h3>
+                            <p class="text-slate-300 text-sm">Siamo a tua completa disposizione per organizzare il ritiro gratuito o per qualsiasi urgenza tecnica.</p>
+                        </div>
+                        <div class="space-y-6">
+                            <a href="tel:3249943466" class="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+                                <div class="w-12 h-12 rounded-xl bg-rimad-500 text-white flex items-center justify-center text-lg shadow-md group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400 font-medium">Telefono / WhatsApp</div>
+                                    <div class="text-lg font-bold text-white group-hover:text-rimad-300 transition-colors">+39 324 9943466</div>
+                                </div>
+                            </a>
+                            <a href="mailto:ndrimadcd@gmail.com" class="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+                                <div class="w-12 h-12 rounded-xl bg-rimad-500 text-white flex items-center justify-center text-lg shadow-md group-hover:scale-105 transition-transform">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400 font-medium">Posta Elettronica</div>
+                                    <div class="text-base font-bold text-white group-hover:text-rimad-300 transition-colors break-all">ndrimadcd@gmail.com</div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-slate-400">
+                            <i class="fa-solid fa-clock text-rimad-400"></i> Risposta rapida garantita in orario lavorativo.
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:col-span-7">
+                    <div class="bg-slate-50 border border-slate-200/80 p-8 sm:p-10 rounded-3xl shadow-lg relative">
+                        <!-- Form collegato a Formspree -->
+                        <form action="https://formspree.io/f/mwlvlqlk" method="POST" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="block text-sm font-semibold text-slate-700">Nome e Cognome *</label>
+                                    <input type="text" name="nome" id="name" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. Dr. Mario Rossi">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="clinic" class="block text-sm font-semibold text-slate-700">Studio Odontoiatrico / Laboratorio *</label>
+                                    <input type="text" name="studio" id="clinic" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. Studio Dentistico Rossi">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="email" class="block text-sm font-semibold text-slate-700">Email *</label>
+                                    <input type="email" name="email" id="email" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="es. info@studiorossi.it">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="phone" class="block text-sm font-semibold text-slate-700">Telefono *</label>
+                                    <input type="tel" name="telefono" id="phone" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. 333 1234567">
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <label for="message" class="block text-sm font-semibold text-slate-700">Messaggio / Dettagli sul Manipolo *</label>
+                                <textarea name="messaggio" id="message" rows="4" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm resize-none" placeholder="Descrivi il materiale da riparare o richiedi il ritiro gratuito con corriere..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-rimad-500 hover:bg-rimad-600 text-white font-semibold py-4 rounded-xl shadow-lg shadow-rimad-500/20 transition-all text-base transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                                <span>Invia Richiesta e Richiedi Ritiro</span>
+                                <i class="fa-solid fa-paper-plane text-sm"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-rimad-950 text-white pt-16 pb-12 border-t border-rimad-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-white/10">
+                <div class="md:col-span-6 space-y-4">
+                    <img src="Rimad Logo.PNG" alt="ND RiMaD" class="h-10 w-auto object-contain">
+                    <p class="text-sm text-slate-400 max-w-md leading-relaxed">
+                        Riparazione Professionale di Manipoli Dentali
+                    </p>
+                </div>
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-bold text-sm text-white tracking-wider uppercase">Link Rapidi</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><a href="#vantaggi" class="hover:text-white transition-colors">Vantaggi</a></li>
+                        <li><a href="#chi-siamo" class="hover:text-white transition-colors">Chi Siamo</a></li>
+                        <li><a href="#contatti" class="hover:text-white transition-colors">Contattaci</a></li>
+                    </ul>
+                </div>
+                <div class="md:col-span-3 space-y-3">
+                    <h4 class="font-bold text-sm text-white tracking-wider uppercase">Contatti</h4>
+                    <ul class="space-y-2 text-sm text-slate-400">
+                        <li><i class="fa-solid fa-phone text-rimad-400 mr-2"></i> +39 324 9943466</li>
+                        <li><i class="fa-solid fa-envelope text-rimad-400 mr-2"></i> ndrimadcd@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+                <p>&copy; <span id="currentYear"></span> ND RiMaD. Tutti i diritti riservati.</p>
+                <p class="flex items-center gap-1">
+                    Progettato con cura per professionisti del settore dentale.
+                </p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
