@@ -2,13 +2,15 @@
 <html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline' https://cdn.tailwindcss.com; img-src 'self' https: data:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://script.google.com; frame-ancestors 'none';">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ND RIMAD - Specialisti nella riparazione di manipoli dentali. Ritiro gratuito, preventivi in 48h, garanzia 6 mesi.">
     <title>ND RiMaD | Riparazione e Assistenza Manipoli Dentali</title>
-    <!-- Script di reindirizzamento automatico per dispositivi mobili -->
-    <script>
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            window.location.href = "mobile.html";
-        }
+    
     </script>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -45,9 +47,6 @@
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-        }
         .hero-pattern {
             background-color: #112138;
             background-image: radial-gradient(rgba(70, 117, 180, 0.15) 1px, transparent 1px);
@@ -56,6 +55,7 @@
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased selection:bg-rimad-500 selection:text-white">
+
     <!-- HEADER FISSO -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md shadow-sm border-b border-slate-100 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -155,194 +155,196 @@
         </div>
     </section>
 
-    <!-- SEZIONE VANTAGGI -->
-    <section id="vantaggi" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-rimad-50 px-3 py-1 rounded-full border border-rimad-100">I Nostri Punti di Forza</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Eccellenza, Velocità e Trasparenza a Servizio del Professionista
-                </h2>
-                <p class="text-slate-600 text-base sm:text-lg">
-                    Comprendiamo l'importanza di avere attrezzature perfettamente efficienti nel tuo studio dentistico o laboratorio odontotecnico.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Ritiro Gratuito</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Ritiro gratuito del materiale tramite corriere a nostro carico direttamente presso la tua sede.
-                    </p>
-                </div>
-                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-file-invoice-dollar"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Preventivo in 48 Ore</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Entro 48 ore dal ricevimento comunichiamo dettagliato preventivo (ed eventuali cause mancata riparazione).
-                    </p>
-                </div>
-                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-clock-rotate-left"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Riconsegna Rapida</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Riconsegna del materiale entro 3 giorni dall'accettazione del preventivo.
-                    </p>
-                </div>
-                <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
-                    <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-slate-900 mb-3">Garanzia 6 Mesi</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Forniamo ricambi originali o Myonic di alta qualità con 6 mesi di garanzia su tutto il materiale sostituito.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- SEZIONE CHI SIAMO -->
-    <section id="chi-siamo" class="py-20 bg-slate-100/70 border-y border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                <div class="lg:col-span-7 space-y-6">
-                    <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-white px-3 py-1 rounded-full border border-slate-200 shadow-xs">Chi Siamo</span>
+    <main>
+        <!-- SEZIONE VANTAGGI -->
+        <section id="vantaggi" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-rimad-50 px-3 py-1 rounded-full border border-rimad-100">I Nostri Punti di Forza</span>
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                        ND RiMaD: Oltre 10 Anni di Esperienza al Vostro Fianco
+                        Eccellenza, Velocità e Trasparenza a Servizio del Professionista
                     </h2>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        <strong>ND RiMaD</strong> opera da più di 10 anni nella riparazione di tutto il materiale rotante sia da studio che da laboratorio, offrendo un punto di riferimento d'eccellenza per dentisti e odontotecnici.
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        Comprendiamo l'importanza di avere attrezzature perfettamente efficienti nel tuo studio dentistico o laboratorio odontotecnico.
                     </p>
-                    <p class="text-slate-600 text-base leading-relaxed">
-                        Sapendo quanto sia critico ogni singolo strumento durante l'attività clinica e di laboratorio, eseguiamo diagnosi accurate, pulizie ultrasoniche approfondite e interventi mirati con la massima cura artigianale e tecnologica.
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
-                            <div class="text-rimad-500 text-xl mt-0.5"><i class="fa-solid fa-award"></i></div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Oltre 10 Anni di Storia</h4>
-                                <p class="text-xs text-slate-500 mt-0.5">Competenza consolidata nel settore.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
-                            <div class="text-rimad-500 text-xl mt-0.5"><i class="fa-solid fa-gear"></i></div>
-                            <div>
-                                <h4 class="font-bold text-slate-900 text-sm">Studio e Laboratorio</h4>
-                                <p class="text-xs text-slate-500 mt-0.5">Riparazione di tutto il materiale rotante.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="lg:col-span-5 flex justify-center">
-                    <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200 w-full max-w-md text-center space-y-6">
-                        <div class="p-6 bg-rimad-900 rounded-2xl shadow-inner flex items-center justify-center">
-                            <img src="Rimad Logo.PNG" alt="ND RiMaD" class="h-16 w-auto object-contain">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                        <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i class="fa-solid fa-truck-fast"></i>
                         </div>
-                        <div class="space-y-3">
-                            <h3 class="text-xl font-bold text-slate-900">Il Tuo Partner di Fiducia</h3>
-                            <p class="text-sm text-slate-500">
-                                Affida i tuoi manipoli a mani esperte nella manutenzione. Restituiamo massima efficienza alle tue apparecchiature.
-                            </p>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Ritiro Gratuito</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Ritiro gratuito del materiale tramite corriere a nostro carico direttamente presso la tua sede.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                        <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
                         </div>
-                        <a href="#contatti" class="block w-full bg-rimad-500 hover:bg-rimad-600 text-white font-semibold py-3.5 rounded-xl shadow-md transition-all text-center text-sm">
-                            Contattaci per una Valutazione
-                        </a>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Preventivo in 48 Ore</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Entro 48 ore dal ricevimento comunichiamo dettagliato preventivo (ed eventuali cause mancata riparazione).
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                        <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Riconsegna Rapida</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Riconsegna del materiale entro 3 giorni dall'accettazione del preventivo.
+                        </p>
+                    </div>
+                    <div class="bg-slate-50 hover:bg-rimad-50/50 border border-slate-200/80 hover:border-rimad-200 p-8 rounded-3xl transition-all duration-300 hover:shadow-xl group">
+                        <div class="w-14 h-14 bg-rimad-100 text-rimad-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-rimad-500 group-hover:text-white transition-all duration-300 shadow-sm">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Garanzia 6 Mesi</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            Forniamo ricambi originali o Myonic di alta qualità con 6 mesi di garanzia su tutto il materiale sostituito.
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- SEZIONE CONTATTI E FORM -->
-    <section id="contatti" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-                <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-rimad-50 px-3 py-1 rounded-full border border-rimad-100">Contattaci Subito</span>
-                <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-                    Richiedi il Ritiro e il Preventivo Gratuiti
-                </h2>
-                <p class="text-slate-600 text-base sm:text-lg">
-                    Compila il form sottostante per richiedere assistenza, oppure utilizza i nostri recapiti diretti.
-                </p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-                <div class="lg:col-span-5 space-y-6">
-                    <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-8 relative overflow-hidden">
-                        <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-rimad-500/10 rounded-full blur-2xl pointer-events-none"></div>
-                        <div class="space-y-2">
-                            <h3 class="text-2xl font-bold">Informazioni Dirette</h3>
-                            <p class="text-slate-300 text-sm">Siamo a tua completa disposizione per organizzare il ritiro gratuito o per qualsiasi urgenza tecnica.</p>
-                        </div>
-                        <div class="space-y-6">
-                            <a href="tel:3249943466" class="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
-                                <div class="w-12 h-12 rounded-xl bg-rimad-500 text-white flex items-center justify-center text-lg shadow-md group-hover:scale-105 transition-transform">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
+        <!-- SEZIONE CHI SIAMO -->
+        <section id="chi-siamo" class="py-20 bg-slate-100/70 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-white px-3 py-1 rounded-full border border-slate-200 shadow-xs">Chi Siamo</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                            ND RiMaD: Oltre 10 Anni di Esperienza al Vostro Fianco
+                        </h2>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            <strong>ND RiMaD</strong> opera da più di 10 anni nella riparazione di tutto il materiale rotante sia da studio che da laboratorio, offrendo un punto di riferimento d'eccellenza per dentisti e odontotecnici.
+                        </p>
+                        <p class="text-slate-600 text-base leading-relaxed">
+                            Sapendo quanto sia critico ogni singolo strumento durante l'attività clinica e di laboratorio, eseguiamo diagnosi accurate, pulizie ultrasoniche approfondite e interventi mirati con la massima cura artigianale e tecnologica.
+                        </p>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+                            <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
+                                <div class="text-rimad-500 text-xl mt-0.5"><i class="fa-solid fa-award"></i></div>
                                 <div>
-                                    <div class="text-xs text-slate-400 font-medium">Telefono / WhatsApp</div>
-                                    <div class="text-lg font-bold text-white group-hover:text-rimad-300 transition-colors">+39 324 9943466</div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Oltre 10 Anni di Storia</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Competenza consolidata nel settore.</p>
                                 </div>
-                            </a>
-                            <a href="mailto:ndrimadcd@gmail.com" class="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
-                                <div class="w-12 h-12 rounded-xl bg-rimad-500 text-white flex items-center justify-center text-lg shadow-md group-hover:scale-105 transition-transform">
-                                    <i class="fa-solid fa-envelope"></i>
-                                </div>
+                            </div>
+                            <div class="flex items-start gap-3 bg-white p-4 rounded-2xl border border-slate-200 shadow-xs">
+                                <div class="text-rimad-500 text-xl mt-0.5"><i class="fa-solid fa-gear"></i></div>
                                 <div>
-                                    <div class="text-xs text-slate-400 font-medium">Posta Elettronica</div>
-                                    <div class="text-base font-bold text-white group-hover:text-rimad-300 transition-colors break-all">ndrimadcd@gmail.com</div>
+                                    <h4 class="font-bold text-slate-900 text-sm">Studio e Laboratorio</h4>
+                                    <p class="text-xs text-slate-500 mt-0.5">Riparazione di tutto il materiale rotante.</p>
                                 </div>
-                            </a>
+                            </div>
                         </div>
-                        <div class="pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-slate-400">
-                            <i class="fa-solid fa-clock text-rimad-400"></i> Risposta rapida garantita in orario lavorativo.
+                    </div>
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="bg-white p-8 sm:p-10 rounded-3xl shadow-xl border border-slate-200 w-full max-w-md text-center space-y-6">
+                            <div class="p-6 bg-rimad-900 rounded-2xl shadow-inner flex items-center justify-center">
+                                <img src="Rimad Logo.PNG" alt="ND RiMaD" class="h-16 w-auto object-contain">
+                            </div>
+                            <div class="space-y-3">
+                                <h3 class="text-xl font-bold text-slate-900">Il Tuo Partner di Fiducia</h3>
+                                <p class="text-sm text-slate-500">
+                                    Affida i tuoi manipoli a mani esperte nella manutenzione. Restituiamo massima efficienza alle tue apparecchiature.
+                                </p>
+                            </div>
+                            <a href="#contatti" class="block w-full bg-rimad-500 hover:bg-rimad-600 text-white font-semibold py-3.5 rounded-xl shadow-md transition-all text-center text-sm">
+                                Contattaci per una Valutazione
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="lg:col-span-7">
-                    <div class="bg-slate-50 border border-slate-200/80 p-8 sm:p-10 rounded-3xl shadow-lg relative">
-                        <!-- Form collegato a Formspree -->
-                        <form action="https://formspree.io/f/mwlvlqlk" method="POST" class="space-y-6">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label for="name" class="block text-sm font-semibold text-slate-700">Nome e Cognome *</label>
-                                    <input type="text" name="nome" id="name" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. Dr. Mario Rossi">
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="clinic" class="block text-sm font-semibold text-slate-700">Studio Odontoiatrico / Laboratorio *</label>
-                                    <input type="text" name="studio" id="clinic" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. Studio Dentistico Rossi">
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label for="email" class="block text-sm font-semibold text-slate-700">Email *</label>
-                                    <input type="email" name="email" id="email" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="es. info@studiorossi.it">
-                                </div>
-                                <div class="space-y-2">
-                                    <label for="phone" class="block text-sm font-semibold text-slate-700">Telefono *</label>
-                                    <input type="tel" name="telefono" id="phone" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. 333 1234567">
-                                </div>
-                            </div>
+            </div>
+        </section>
+
+        <!-- SEZIONE CONTATTI E FORM -->
+        <section id="contatti" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <span class="text-rimad-500 font-semibold text-sm uppercase tracking-wider bg-rimad-50 px-3 py-1 rounded-full border border-rimad-100">Contattaci Subito</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+                        Richiedi il Ritiro e il Preventivo Gratuiti
+                    </h2>
+                    <p class="text-slate-600 text-base sm:text-lg">
+                        Compila il form sottostante per richiedere assistenza, oppure utilizza i nostri recapiti diretti.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-slate-900 text-white p-8 sm:p-10 rounded-3xl shadow-xl space-y-8 relative overflow-hidden">
+                            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-rimad-500/10 rounded-full blur-2xl pointer-events-none"></div>
                             <div class="space-y-2">
-                                <label for="message" class="block text-sm font-semibold text-slate-700">Messaggio / Dettagli sul Manipolo *</label>
-                                <textarea name="messaggio" id="message" rows="4" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm resize-none" placeholder="Descrivi il materiale da riparare o richiedi il ritiro gratuito con corriere..."></textarea>
+                                <h3 class="text-2xl font-bold">Informazioni Dirette</h3>
+                                <p class="text-slate-300 text-sm">Siamo a tua completa disposizione per organizzare il ritiro gratuito o per qualsiasi urgenza tecnica.</p>
                             </div>
-                            <button type="submit" class="w-full bg-rimad-500 hover:bg-rimad-600 text-white font-semibold py-4 rounded-xl shadow-lg shadow-rimad-500/20 transition-all text-base transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                                <span>Invia Richiesta e Richiedi Ritiro</span>
-                                <i class="fa-solid fa-paper-plane text-sm"></i>
-                            </button>
-                        </form>
+                            <div class="space-y-6">
+                                <a href="tel:3249943466" class="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+                                    <div class="w-12 h-12 rounded-xl bg-rimad-500 text-white flex items-center justify-center text-lg shadow-md group-hover:scale-105 transition-transform">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-400 font-medium">Telefono / WhatsApp</div>
+                                        <div class="text-lg font-bold text-white group-hover:text-rimad-300 transition-colors">+39 324 9943466</div>
+                                    </div>
+                                </a>
+                                <a href="mailto:ndrimadcd@gmail.com" class="flex items-center gap-4 group p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/10 transition-all">
+                                    <div class="w-12 h-12 rounded-xl bg-rimad-500 text-white flex items-center justify-center text-lg shadow-md group-hover:scale-105 transition-transform">
+                                        <i class="fa-solid fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <div class="text-xs text-slate-400 font-medium">Posta Elettronica</div>
+                                        <div class="text-base font-bold text-white group-hover:text-rimad-300 transition-colors break-all">ndrimadcd@gmail.com</div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="pt-6 border-t border-white/10 flex items-center gap-3 text-xs text-slate-400">
+                                <i class="fa-solid fa-clock text-rimad-400"></i> Risposta rapida garantita in orario lavorativo.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <div class="bg-slate-50 border border-slate-200/80 p-8 sm:p-10 rounded-3xl shadow-lg relative">
+                            <!-- Form collegato al Google Sheet con Script personalizzato -->
+                            <form id="contactForm" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="name" class="block text-sm font-semibold text-slate-700">Nome e Cognome *</label>
+                                        <input type="text" name="nome" id="name" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. Dr. Mario Rossi">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="clinic" class="block text-sm font-semibold text-slate-700">Studio Odontoiatrico / Laboratorio *</label>
+                                        <input type="text" name="studio" id="clinic" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. Studio Dentistico Rossi">
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div class="space-y-2">
+                                        <label for="email" class="block text-sm font-semibold text-slate-700">Email *</label>
+                                        <input type="email" name="email" id="email" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="es. info@studiorossi.it">
+                                    </div>
+                                    <div class="space-y-2">
+                                        <label for="phone" class="block text-sm font-semibold text-slate-700">Telefono *</label>
+                                        <input type="tel" name="telefono" id="phone" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm" placeholder="Es. 333 1234567">
+                                    </div>
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="message" class="block text-sm font-semibold text-slate-700">Messaggio / Dettagli sul Manipolo *</label>
+                                    <textarea name="messaggio" id="message" rows="4" required class="w-full px-4 py-3.5 rounded-xl bg-white border border-slate-200 text-slate-800 focus:outline-none focus:ring-2 focus:ring-rimad-500 focus:border-transparent transition-all text-sm resize-none" placeholder="Descrivi il materiale da riparare o richiedi il ritiro gratuito con corriere..."></textarea>
+                                </div>
+                                <button type="submit" id="submitBtn" class="w-full bg-rimad-500 hover:bg-rimad-600 text-white font-semibold py-4 rounded-xl shadow-lg shadow-rimad-500/20 transition-all text-base transform hover:-translate-y-0.5 flex items-center justify-center gap-2 cursor-pointer">
+                                    <span id="btnText">Invia Richiesta e Richiedi Ritiro</span>
+                                    <i class="fa-solid fa-paper-plane text-sm"></i>
+                                </button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
     <footer class="bg-rimad-950 text-white pt-16 pb-12 border-t border-rimad-900">
@@ -371,16 +373,53 @@
                 </div>
             </div>
             <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
-                <p>&copy; <span id="currentYear"></span> ND RiMaD. Tutti i diritti riservati.</p>
-                <p class="flex items-center gap-1">
-                    Progettato con cura per professionisti del settore dentale.
-                </p>
+                <p>&copy; <span id="currentYear"></span> ND RiMaD. Tutti i diritti riservati. P.IVA: 05558470265</p>
+                <p>Riparazione e Assistenza Manipoli Odontoiatrici</p>
             </div>
         </div>
     </footer>
 
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- SCRIPT JAVASCRIPT PER L'INVIO AL GOOGLE SHEET -->
+    <script>
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6_6mOvU4rrUA4MSn50Ei8GoiXnmaeNakJDk1nUSB8ouxA7C02_qxXzDEnh6srYNfEng/exec";
+
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        const btn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        
+        btnText.textContent = "Invio in corso...";
+        btn.disabled = true;
+
+        const formData = {
+            nome: document.getElementById('name').value,
+            studio: document.getElementById('clinic').value,
+            email: document.getElementById('email').value,
+            telefono: document.getElementById('phone').value,
+            messaggio: document.getElementById('message').value
+        };
+
+        try {
+            await fetch(SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            });
+
+            alert('Richiesta inviata con successo! Ti ricontatteremo al più presto.');
+            document.getElementById('contactForm').reset();
+        } catch (error) {
+            alert('Si è verificato un errore durante l invio. Riprova più tardi.');
+        } finally {
+            btnText.textContent = "Invia Richiesta e Richiedi Ritiro";
+            btn.disabled = false;
+        }
+    });
     </script>
 </body>
 </html>
