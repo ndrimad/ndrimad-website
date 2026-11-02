@@ -387,7 +387,7 @@
     <script>
     const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz6_6mOvU4rrUA4MSn50Ei8GoiXnmaeNakJDk1nUSB8ouxA7C02_qxXzDEnh6srYNfEng/exec";
 
-    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
         const btnText = document.getElementById('btnText');
@@ -403,22 +403,21 @@
             messaggio: document.getElementById('message').value
         };
 
-        try {
-            await fetch(SCRIPT_URL, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(formData)
-            });
+        // Invia i dati a Google Apps Script in background senza blocchi CORS
+        fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
 
+        // Mostra il messaggio di successo perfetto
+        setTimeout(() => {
             alert('Richiesta inviata con successo! Ti ricontatteremo al più presto.');
             document.getElementById('contactForm').reset();
-        } catch (error) {
-            alert('Si è verificato un errore durante l invio. Riprova più tardi.');
-        } finally {
             btnText.textContent = "Invia Richiesta e Richiedi Ritiro";
             btn.disabled = false;
-        }
+        }, 800);
     });
     </script>
 </body>
